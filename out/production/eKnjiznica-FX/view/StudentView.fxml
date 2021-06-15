@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-image: url('zaprojekt3.jpg');" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.StudentController">
+   <children>
+      <TableView fx:id="StudentKnjigeTbl" layoutX="289.0" layoutY="87.0" minWidth="450.0" onMouseClicked="#odaberiKnjigu" prefHeight="333.0" prefWidth="485.0" style="-fx-background-radius: 5,4,3,5;" stylesheets="@../css/style.css" AnchorPane.rightAnchor="25.399999999999977">
+        <columns>
+          <TableColumn fx:id="NazivKnjigeTblCol" minWidth="152.0" prefWidth="-1.0" text="Naziv knjige" />
+          <TableColumn fx:id="BrStrKnjigeTblCol" minWidth="152.0" prefWidth="-1.0" text="Broj stranica" />
+            <TableColumn fx:id="KategorijaTblCol" minWidth="152.0" prefWidth="180.79998168945315" text="Kategorija" />
+        </columns>
+         <styleClass>
+            <String fx:value="table-row-cell" />
+            <String fx:value="table-cell" />
+         </styleClass>
+      </TableView>
+      <Label layoutX="420.0" layoutY="18.0" prefHeight="40.0" prefWidth="224.0" style="-fx-background-color: #52b788; -fx-background-radius: 5,4,3,5; -fx-padding: 10 20 10 20;" text="Popis Knjiga" textFill="WHITE" AnchorPane.rightAnchor="156.0" AnchorPane.topAnchor="18.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button layoutX="488.0" layoutY="446.0" mnemonicParsing="false" onMouseClicked="#OtvoriPDF" prefHeight="40.0" prefWidth="86.0" styleClass="gumbzaprijavu" stylesheets="@../css/style.css" text="Čitaj" textFill="#927e7e" AnchorPane.rightAnchor="225.60000000000002" />
+      <ImageView fitHeight="50.0" fitWidth="54.0" layoutX="574.0" layoutY="18.0" onMouseClicked="#OtvoriPDF" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="176.0">
+         <image>
+            <Image url="@../assets/book.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="30.0" layoutY="35.0" prefHeight="200.0" prefWidth="198.0" styleClass="prozorstudenta" stylesheets="@../css/style.css" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="35.0">
+         <children>
+            <ImageView fitHeight="50.0" fitWidth="40.0" layoutX="81.0" layoutY="-20.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="81.0" AnchorPane.topAnchor="-20.0">
+               <image>
+                  <Image url="@../assets/usericon.png" />
+               </image>
+               <effect>
+                  <Glow level="0.35" />
+               </effect>
+            </ImageView>
+            <Label fx:id="ImePrezimeLbl" alignment="TOP_CENTER" layoutX="1.0" layoutY="28.0" prefHeight="38.0" prefWidth="198.0" textFill="#ddd9d9">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Separator layoutX="10.0" layoutY="66.0" prefWidth="180.0" />
+            <Label layoutX="16.0" layoutY="90.0" text="Korisnicko Ime &gt;" textFill="#ddd9d9" />
+            <Label layoutX="17.0" layoutY="125.0" text="Studij &gt;" textFill="#ddd9d9" />
+            <Label layoutX="17.0" layoutY="160.0" text="Prosjek &gt; " textFill="#ddd9d9" />
+            <Label fx:id="KorisnickoImeLbl" layoutX="115.0" layoutY="90.0" prefHeight="18.0" prefWidth="78.0" textFill="#52b788" />
+            <Label fx:id="StudijLbl" layoutX="115.0" layoutY="125.0" prefHeight="18.0" prefWidth="78.0" textFill="#52b788" />
+            <Label fx:id="ProsjekLbl" layoutX="115.0" layoutY="160.0" prefHeight="18.0" prefWidth="78.0" textFill="#52b788" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

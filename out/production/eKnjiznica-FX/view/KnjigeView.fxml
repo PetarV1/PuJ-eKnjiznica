@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="611.0" prefWidth="925.0" style="-fx-background-image: url('zaprojekt3.jpg');" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.KnjigeController">
+   <children>
+      <TableView fx:id="autorTbl" layoutX="25.0" layoutY="25.0" onMouseClicked="#odaberiAutora" prefHeight="261.0" prefWidth="310.0" stylesheets="@../css/style.css">
+        <columns>
+          <TableColumn fx:id="IDTblCol" prefWidth="61.0" text="#ID" />
+          <TableColumn fx:id="ImeTblCol" prefWidth="114.0" text="Ime autora" />
+            <TableColumn fx:id="PrezimeTblCol" prefWidth="134.0" text="Prezime autora" />
+        </columns>
+         <styleClass>
+            <String fx:value="table-cell" />
+            <String fx:value="table-row-cell" />
+         </styleClass>
+      </TableView>
+      <AnchorPane layoutX="359.0" layoutY="24.0" prefHeight="262.0" prefWidth="206.0" styleClass="prozordodavanje" stylesheets="@../css/style.css">
+         <children>
+            <Label layoutX="21.0" layoutY="20.0" prefHeight="17.0" prefWidth="85.0" text="Ime autora:" textFill="#ddd9d9" />
+            <Label layoutX="21.0" layoutY="85.0" text="Prezime autora:" textFill="#ddd9d9" />
+            <Button layoutX="14.0" layoutY="159.0" mnemonicParsing="false" onAction="#spasiAutora" prefHeight="37.0" prefWidth="80.0" styleClass="gumbzaprijavu" stylesheets="@../css/style.css" text="Spremi" />
+            <Button layoutX="117.0" layoutY="159.0" mnemonicParsing="false" onAction="#pobrisiAutora" prefHeight="37.0" prefWidth="74.0" styleClass="gumbzaprijavu" stylesheets="@../css/style.css" text="Briši" />
+            <TextField fx:id="ImeAutoraTxt" layoutX="21.0" layoutY="50.0" />
+            <TextField fx:id="PrezimeAutoraTxt" layoutX="21.0" layoutY="115.0" />
+            <Button layoutX="64.0" layoutY="208.0" mnemonicParsing="false" onMouseClicked="#vratiAutoraNaNull" prefHeight="37.0" prefWidth="80.0" styleClass="gumbzaprijavu" stylesheets="@../css/style.css" text="Null" />
+         </children>
+      </AnchorPane>
+      <TableView fx:id="AdminKnjigeTbl" editable="true" layoutX="25.0" layoutY="304.0" maxWidth="600.0" onMouseClicked="#odaberiKnjigu" prefHeight="248.0" prefWidth="600.0" stylesheets="@../css/style.css">
+        <columns>
+          <TableColumn fx:id="NazivKnjigeTblCol" prefWidth="182.0" text="Naziv knjige" />
+          <TableColumn fx:id="BrStrKnjigeTblCol" prefWidth="82.0" text="Broj stranica" />
+            <TableColumn fx:id="KategorijaTblCol" prefWidth="176.0" text="Kategorija" />
+            <TableColumn fx:id="IDAutorTblCol" prefWidth="82.0" text="ID autora" />
+            <TableColumn fx:id="IDKolegijTblCol" prefWidth="82.0" text="ID kolegija" />
+        </columns>
+         <styleClass>
+            <String fx:value="table-row-cell" />
+            <String fx:value="table-cell" />
+         </styleClass>
+      </TableView>
+      <AnchorPane layoutX="657.0" layoutY="24.0" prefHeight="532.0" prefWidth="240.0" styleClass="prozordodavanje" stylesheets="@../css/style.css">
+         <children>
+            <Label layoutX="21.0" layoutY="20.0" prefHeight="17.0" prefWidth="85.0" text="Naziv knjige:" textFill="#ddd9d9" />
+            <Label layoutX="21.0" layoutY="85.0" text="Broj stranica:" textFill="#ddd9d9" />
+            <Button layoutX="7.0" layoutY="356.0" mnemonicParsing="false" onAction="#spasiKnjigu" prefHeight="37.0" prefWidth="85.0" styleClass="gumbzaprijavu" stylesheets="@../css/style.css" text="Spremi" />
+            <Button layoutX="148.0" layoutY="356.0" mnemonicParsing="false" onAction="#pobrisiKnjigu" prefHeight="37.0" prefWidth="80.0" styleClass="gumbzaprijavu" stylesheets="@../css/style.css" text="Briši" />
+            <TextField fx:id="NazivKnjigeTxt" layoutX="21.0" layoutY="50.0" />
+            <TextField fx:id="BrojStranicaTxt" layoutX="21.0" layoutY="115.0" />
+            <TextField fx:id="KategorijaTxt" layoutX="21.0" layoutY="180.0" />
+            <TextField fx:id="AutorIDTxt" layoutX="21.0" layoutY="245.0" prefHeight="26.0" prefWidth="54.0" text="0" />
+            <Label layoutX="21.0" layoutY="150.0" prefHeight="18.0" prefWidth="58.0" text="Kategorija:" textFill="#ddd9d9" />
+            <Label layoutX="21.0" layoutY="215.0" text="ID Autora:" textFill="#ddd9d9" />
+            <Button layoutX="83.0" layoutY="401.0" mnemonicParsing="false" onMouseClicked="#vratiKnjiguNaNull" prefHeight="37.0" prefWidth="74.0" styleClass="gumbzaprijavu" stylesheets="@../css/style.css" text="Null" />
+            <Label layoutX="21.0" layoutY="280.0" text="ID Kolegija:" textFill="#ddd9d9" />
+            <TextField fx:id="KolegijIDTxt" layoutX="21.0" layoutY="310.0" prefHeight="26.0" prefWidth="54.0" text="0" />
+            <TextArea layoutX="4.0" layoutY="451.0" prefHeight="70.0" prefWidth="235.0" text="Knjige čiji je AutorID = 0, nemaju autora.&#10;Knjige čiji je KolegijID = 0, ne pripadaju &#10;stručnoj literaturi." />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

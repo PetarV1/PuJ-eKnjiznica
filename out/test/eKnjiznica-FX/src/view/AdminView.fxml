@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane onMouseClicked="#vratiKolegijNaNull" prefHeight="579.0" prefWidth="927.0" style="-fx-background-image: url('zaprojekt3.jpg');" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminController">
+   <children>
+      <TabPane layoutY="8.0" prefHeight="425.0" prefWidth="927.0" stylesheets="@../css/style.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="22.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="8.0">
+        <tabs>
+          <Tab text="Korisnici">
+              <fx:include fx:id="korisniciAdminTab" source="KorisniciView.fxml" />
+          </Tab>
+          <Tab text="Kolegiji">
+               <content>
+                  <AnchorPane fx:id="KolegijiPane" onMouseClicked="#vratiKolegijNaNull" prefHeight="519.0" prefWidth="56.0">
+                     <children>
+                        <AnchorPane layoutX="432.0" layoutY="17.0" prefHeight="341.0" prefWidth="242.0" styleClass="prozordodavanje" stylesheets="@../css/style.css">
+                           <children>
+                              <Label layoutX="23.0" layoutY="30.0" prefHeight="17.0" prefWidth="85.0" text="Naziv kolegija:" textFill="#ddd9d9" />
+                              <Label layoutX="23.0" layoutY="123.0" text="ID Studija:" textFill="#ddd9d9" />
+                              <Button layoutX="14.0" layoutY="232.0" mnemonicParsing="false" onAction="#spasiKolegij" prefHeight="37.0" prefWidth="84.0" styleClass="gumbzaprijavu" stylesheets="@../css/style.css" text="Spremi" />
+                              <Button layoutX="150.0" layoutY="232.0" mnemonicParsing="false" onAction="#pobrisiKolegij" prefHeight="37.0" prefWidth="77.0" styleClass="gumbzaprijavu" stylesheets="@../css/style.css" text="Briši" />
+                              <TextField fx:id="NazivKolegijaTxt" layoutX="23.0" layoutY="60.0" prefHeight="26.0" prefWidth="183.0" />
+                              <ChoiceBox fx:id="StudijiTxt" layoutX="23.0" layoutY="153.0" prefHeight="26.0" prefWidth="59.0" />
+                           </children>
+                        </AnchorPane>
+                        <TableView fx:id="kolegijiTbl" layoutX="21.0" layoutY="20.0" minWidth="250.0" onMouseClicked="#odaberiKolegij" prefHeight="330.0" prefWidth="260.0" stylesheets="@../css/style.css">
+                          <columns>
+                            <TableColumn fx:id="IDTblCol" minWidth="12.0" prefWidth="60.0" text="#ID" />
+                            <TableColumn fx:id="NazivKolegijaTblCol" prefWidth="133.60000610351562" text="Naziv kolegija" />
+                              <TableColumn fx:id="StudijIDTblCol" prefWidth="66.39997863769531" text="studijID" />
+                          </columns>
+                           <styleClass>
+                              <String fx:value="table-cell" />
+                              <String fx:value="table-row-cell" />
+                           </styleClass>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content></Tab>
+            <Tab text="Knjige">
+                <fx:include fx:id="knjigeAdminTab" source="KnjigeView.fxml" />
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

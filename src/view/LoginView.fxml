@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="us" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="410.0" prefWidth="920.0" style="-fx-background-image: url('bookshelf.jpg');" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
+   <children>
+      <AnchorPane layoutX="438.0" layoutY="-3.0" prefHeight="383.0" prefWidth="388.0" styleClass="loginprozor" stylesheets="@../css/style.css" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+         <children>
+            <Label alignment="CENTER" layoutX="145.0" layoutY="14.0" prefHeight="37.0" prefWidth="112.0" text="Prijava" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="29.0" layoutY="110.0" prefHeight="38.0" prefWidth="164.0" text="Korisničko ime" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="usernameTxtFld" layoutX="231.0" layoutY="117.0" prefHeight="25.0" prefWidth="125.0" promptText="username" styleClass="text-field" />
+            <Label layoutX="29.0" layoutY="158.0" prefHeight="38.0" prefWidth="112.0" text="Lozinka" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="passwordTxtFld" layoutX="231.0" layoutY="165.0" prefHeight="25.0" prefWidth="125.0" promptText="password" />
+            <Button layoutX="140.0" layoutY="273.0" mnemonicParsing="false" onAction="#onClickLoginHandle" prefHeight="37.0" prefWidth="137.0" styleClass="gumbzaprijavu" stylesheets="@../css/style.css" text="Prijavi se" />
+            <Label fx:id="messageLbl" layoutX="111.0" layoutY="223.0" prefHeight="25.0" prefWidth="211.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="38.0" fitWidth="33.0" layoutX="152.0" layoutY="158.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/padlock.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="38.0" fitWidth="33.0" layoutX="152.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/user.png" />
+               </image>
+            </ImageView>
+            <Separator layoutX="101.0" layoutY="62.0" prefWidth="200.0" />
+         </children>
+         <padding>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+         </padding>
+      </AnchorPane>
+      <ImageView fitHeight="56.0" fitWidth="97.0" layoutX="27.0" layoutY="404.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0">
+         <image>
+            <Image url="@../assets/sum.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="13.0" layoutY="156.0" prefHeight="53.0" prefWidth="412.0" text="Dobrodošli na eKnjižnicu" textFill="WHITE" AnchorPane.leftAnchor="40.0">
+         <font>
+            <Font size="36.0" />
+         </font>
+         <padding>
+            <Insets right="15.0" />
+         </padding>
+      </Label>
+   </children>
+</AnchorPane>
