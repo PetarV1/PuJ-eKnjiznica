@@ -1,6 +1,6 @@
 package ispisivanjePoruka;
 
-//ovaj interface je napravljane zato sto KnjigeController ima 2 forme, stoga trebaju 4 klase.
+//ovaj interface je napravljen posebno zato sto KnjigeController ima 2 forme, stoga trebaju 4 metode.
 
 public interface PodaciPoruke2 {
     public abstract void ispisiPorukuAutor();
