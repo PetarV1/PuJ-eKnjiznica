@@ -130,22 +130,4 @@ public class Tablica {
         }
        return lista;
     }
-
-    public static ObservableList<Object> dohvatiKnjigu(Class cls, Long ID) throws Exception {
-        String tablica = dajImeTablice(cls);
-        Long IDs = ID;
-        String SQL = "SELECT * FROM "+tablica+" WHERE ID = " + IDs;
-        Statement iskaz = Baza.KONEKCIJA.createStatement();
-        ResultSet rezultat = iskaz.executeQuery(SQL);
-        ObservableList<Object> lista = FXCollections.observableArrayList();
-        while(rezultat.next()) {
-            Object objekt = Class.forName(cls.getName()).newInstance();
-            Class<?> drugiObjekt = objekt.getClass();
-            for (Field f : objekt.getClass().getDeclaredFields()) {
-                f.set(objekt, rezultat.getObject(f.getName()));
-            }
-            lista.add(objekt);
-        }
-        return lista;
-    }
 }
